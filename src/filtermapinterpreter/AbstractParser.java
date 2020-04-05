@@ -158,6 +158,9 @@ public abstract class AbstractParser {
             return false;
         if (BRACKETS.indexOf(bracket) == -1)
             return false;
-        return source.charAt(pos++) == bracket;
+        char curr = current();
+        next();
+//        skipSpaces(); // Uses if needed
+        return curr == bracket;
     }
 }
