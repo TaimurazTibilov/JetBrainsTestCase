@@ -16,7 +16,9 @@ public class FilterMapInterpreter {
         ArrayList<ASTree> callExpressions = new ArrayList<>();
         boolean hasFilter = false;
         boolean hasMap = false;
-        String[] calls = source.split("%>%");
+        String[] calls = new String[0];
+        if (!source.isBlank())
+            calls = source.split("%>%");
         int counter = 0;
         for (String call : calls) {
             counter++;
