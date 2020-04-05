@@ -5,6 +5,12 @@ import com.sun.jdi.InvalidTypeException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Class-interpreter, has static method that interprets given source string
+ * to format "filter{expression}%>%map{expression}"
+ *
+ * @author Taimuraz Tibilov
+ */
 public class FilterMapInterpreter {
 
     public static void main(String[] args) {
@@ -12,6 +18,15 @@ public class FilterMapInterpreter {
         System.out.println(interpret(input.nextLine()));
     }
 
+    /**
+     * Method that interprets given source string to format
+     * "filter{expression}%>%map{expression}" or returns string with
+     * description of error that happened while parsed
+     *
+     * @param source string that contains expression built by test case grammar
+     * @return expression formed as "filter{expression}%>%map{expression}" or string with
+     * description of error that happened while parsed
+     */
     public static String interpret(String source) {
         ArrayList<ASTree> callExpressions = new ArrayList<>();
         boolean hasFilter = false;
